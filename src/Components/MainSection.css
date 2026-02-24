@@ -1,0 +1,14 @@
+main {
+  padding: 20px;
+}
+
+section {
+  margin-bottom: 30px;
+}
+
+article {
+  background-color: white;
+  padding: 15px;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+}
