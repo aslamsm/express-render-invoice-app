@@ -9,7 +9,8 @@
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "start": "node server.js"
+    "start": "npm run build && node server.js",
+    "render-start": "node server.js"
   },
   "dependencies": {
     "bootstrap": "^5.3.8",
