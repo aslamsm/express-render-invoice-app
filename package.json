@@ -1,7 +1,7 @@
 {
   "name": "express-render-app",
   "version": "1.0.0",
-  "main": "server/server.js",
+  "main": "server.js",
   "private": true,
   "type": "module",
   "scripts": {
@@ -9,7 +9,7 @@
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "start": "node server/server.js"
+    "start": "node server.js"
   },
   "dependencies": {
     "bootstrap": "^5.3.8",
