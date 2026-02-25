@@ -14,7 +14,7 @@ app.use(express.json());
 // local host port : 5173... render port : 3000... server port : 5000
 app.use(
   cors({
-    origin: ["http://localhost:3000", "http://localhost:5173"],
+    origin: ["http://localhost:3000", "http://localhost:5000"],
   }),
 );
 
