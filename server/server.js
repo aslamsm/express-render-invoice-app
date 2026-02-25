@@ -104,6 +104,9 @@ const Invoice = mongoose.model("Invoice", invoiceSchema);
 // =======================
 // CUSTOMER ROUTES
 // =======================
+app.get("/", (req, res) => {
+  res.json({ message: "Invoice Management API is Running" });
+});
 
 app.post("/customers", async (req, res) => {
   try {
