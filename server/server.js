@@ -10,7 +10,7 @@ app.use(express.json());
 
 app.use(
   cors({
-    origin: ["http://localhost:3000", "http://localhost:5173"],
+    origin: ["http://localhost:3000", "http://localhost:5000"],
   }),
 );
 
@@ -19,7 +19,7 @@ app.use(
 // =======================
 
 mongoose
-  .connect(process.env.MONGO_URL || "")
+  .connect(process.env.MONGO_URL || 5000)
   .then(() => console.log("Connected to MongoDB"))
   .catch((err) => console.error("MongoDB connection error:", err));
 
