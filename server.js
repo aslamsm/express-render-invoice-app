@@ -21,6 +21,10 @@ app.use(
   }),
 );
 
+app.get("/", (req, res) => {
+  res.send("API is running...");
+});
+
 // =======================
 // MongoDB Connection
 // =======================

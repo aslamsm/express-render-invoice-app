@@ -18,7 +18,7 @@ import CourseList4 from "./Components/CourseList4";
 import CourseAdd from "./Components/CourseAdd";
 import RegisterUser from "./Components/RegisterUser";
 import CourseEdit from "./Components/CourseEdit";
-import CustomerList from "./Components/CustomerList";
+//import CustomerList from "./Components/CustomerList";
 import CreateInvoice from "./Components/CreateInvoice";
 import InvoiceList from "./Components/InvoiceList";
 
@@ -357,7 +357,7 @@ function App() {
             <Route path="/courses/add" element={<CourseAdd />} />
             <Route path="/courses/edit/:id" element={<CourseEdit />} />
             <Route path="/register" element={<RegisterUser />} />
-            <Route path="/customers" element={<CustomerList />} />
+            {/* <Route path="/customers" element={<CustomerList />} />  */}
             <Route path="/create-invoice" element={<CreateInvoice />} />
             <Route path="/invoices" element={<InvoiceList />} />
           </Routes>
