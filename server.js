@@ -4,7 +4,7 @@ import dotenv from "dotenv";
 import cors from "cors";
 
 import customerRoutes from "./routes/customers.js";
-import itemRoutes from "./routes/items.js";
+import itemRoutes from "./routes/Items.js";
 import invoiceRoutes from "./routes/invoices.js";
 
 dotenv.config();
