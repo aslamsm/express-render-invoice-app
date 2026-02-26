@@ -6,11 +6,12 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc -b && vite build",
+    "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "start": "npm run build && node server.js",
-    "render-start": "node server.js"
+    "start": "node server.js",
+    "render-start": "node server.js",
+    "render-build": "npm install && npm run build"
   },
   "dependencies": {
     "bootstrap": "^5.3.8",
