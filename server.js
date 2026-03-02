@@ -3,7 +3,7 @@ import mongoose from "mongoose";
 import dotenv from "dotenv";
 import cors from "cors";
 import path from "path";
-import { fileURLToPath } from "url";
+// import { fileURLToPath } from "url";
 
 import customerRoutes from "./routes/customers.js";
 import itemRoutes from "./routes/Items.js";
@@ -13,8 +13,8 @@ dotenv.config();
 const app = express();
 
 // ES modules fix for __dirname
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
+//const __filename = fileURLToPath(import.meta.url);
+//const __dirname = path.dirname(__filename);
 
 app.use(express.json());
 
@@ -48,31 +48,31 @@ app.use("/invoices", invoiceRoutes);
 // =======================
 
 // In production, serve the built React app
-if (process.env.NODE_ENV === "production") {
-  // Serve static files from the dist directory
-  app.use(express.static(path.join(__dirname, "dist")));
+//if (process.env.NODE_ENV === "production") {
+// Serve static files from the dist directory
+//app.use(express.static(path.join(__dirname, "dist")));
 
-  // For any route that doesn't match an API route, serve index.html
-  app.get("*", (req, res) => {
-    // Skip API routes
-    if (
-      req.path.startsWith("/customers") ||
-      req.path.startsWith("/items") ||
-      req.path.startsWith("/invoices")
-    ) {
-      return res.status(404).json({ error: "API endpoint not found" });
-    }
+// For any route that doesn't match an API route, serve index.html
+//app.get("*", (req, res) => {
+// Skip API routes
+// if (
+//  req.path.startsWith("/customers") ||
+//  req.path.startsWith("/items") ||
+// req.path.startsWith("/invoices")
+//) {
+// return res.status(404).json({ error: "API endpoint not found" });
+//}
 
-    res.sendFile(path.join(__dirname, "dist", "index.html"));
-  });
+//res.sendFile(path.join(__dirname, "dist", "index.html"));
+//});
 
-  console.log("Production mode: Serving React app from dist folder");
-} else {
-  // Development mode
-  app.get("/", (req, res) => {
-    res.send("API is running. Frontend is in development mode on port 5173");
-  });
-}
+// console.log("Production mode: Serving React app from dist folder");
+//} else {
+// Development mode
+app.get("/", (req, res) => {
+  res.send("API is running. Frontend is in development mode on port 5173");
+});
+//}
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
