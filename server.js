@@ -16,16 +16,16 @@ const app = express();
 
 app.use(express.json());
 
-// CORS Configuration
+// ✅ CORS Configuration (Production + Local)
 app.use(
   cors({
     origin: [
-      "https://your-frontend-name.vercel.app", // ✅ Vercel frontend
-      "http://localhost:5173", // ✅ Local development
+      "https://express-render-frontend.vercel.app", // ✅ Vercel frontend
+      "http://localhost:5173", // ✅ Local dev
     ],
     methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true,
-  }),
+  })
 );
 
 // =======================
@@ -45,7 +45,7 @@ app.use("/customers", customerRoutes);
 app.use("/items", itemRoutes);
 app.use("/invoices", invoiceRoutes);
 
-// Root Route
+// Root route
 app.get("/", (req, res) => {
   res.send("✅ API is running on Render");
 });
