@@ -16,18 +16,20 @@ const app = express();
 
 app.use(express.json());
 
+// Parse CORS origins from environment variable
+const corsOrigins = process.env.CORS_ORIGIN
+  ? process.env.CORS_ORIGIN.split(",")
+  : ["http://localhost:3000"];
+
 // ✅ CORS Configuration (Production + Local)
 app.use(
   cors({
-    origin: [
-      "https://express-render-frontend.vercel.app", // ✅ Vercel frontend
-      "http://localhost:5173", // ✅ Local dev
-    ],
-    methods: ["GET", "POST", "PUT", "DELETE"],
+    origin: corsOrigins,
     credentials: true,
   }),
 );
 
+app.use(express.json());
 // =======================
 // MongoDB Connection
 // =======================
@@ -55,7 +57,6 @@ app.get("/", (req, res) => {
 // =======================
 
 const PORT = process.env.PORT || 5000;
-
 app.listen(PORT, () => {
-  console.log(`🚀 Server running on port ${PORT}`);
+  console.log(`Server running on port ${PORT}`);
 });
