@@ -19,7 +19,7 @@ app.use(express.json());
 // Parse CORS origins from environment variable
 const corsOrigins = process.env.CORS_ORIGIN
   ? process.env.CORS_ORIGIN.split(",")
-  : ["http://localhost:3000"];
+  : ["http://localhost:5173"];
 
 // ✅ CORS Configuration (Production + Local)
 app.use(
