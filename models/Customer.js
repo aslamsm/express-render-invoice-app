@@ -76,7 +76,6 @@ const customerSchema = new mongoose.Schema(
 
 // ── Indexes ───────────────────────────────────────────────────────────────────
 customerSchema.index({ "contact.phone": 1 });
-customerSchema.index({ "contact.email": 1 }, { sparse: true });
 customerSchema.index({ "account.status": 1 });
 customerSchema.index({ firstName: 1, lastName: 1 });
 
